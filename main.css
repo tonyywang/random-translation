@@ -32,7 +32,7 @@ p {
 	letter-spacing: 0.01em;
 }
 
-/*For shop name only*/
+/*For title on main page only*/
 h1 {
     width: 100%;
 	font: 2em/140% 'Lora', Arial, serif;
@@ -40,40 +40,16 @@ h1 {
 	font-weight: 700;
 	color: #FFFFFF;
 	margin: 2em 0;
-    padding-top: 4em;
+    padding: 2em 0 1em 0;
 	text-align: center;
     word-wrap: break-word;
-}
-
-/*Copies and section headers*/
-h2 {
-    width: 100%;
-	font: 1.8em/120% 'Lato', Arial, sans-serif;
-	font-weight: 400;
-	letter-spacing: .5px;
-	color: #000000;
-	margin: auto;
-    line-height: 1.25em;
-	text-align: center;
-	word-wrap: break-word;
-}
-
-/*Subsection headers on individual pages*/
-h3 {
-    font: 5em/200% 'Lato', Arial, sans-serif;
-    font-weight: 900;
-    color: #FFFFFF;
-    letter-spacing: .2em;
-    text-align: center;
-    margin: auto;
-    padding: auto;
 }
 
 /*ID for flexbox wrapper on entire page*/
 #wrapper {
 	width: 100%;
 	padding: 0;
-	margin: 0;
+	margin: 0;    
 
 	display: flex;
 	flex-flow: row wrap;
@@ -107,15 +83,6 @@ h3 {
     justify-content: space-between;
 }
 
-nav {
-    width: auto;
-	margin: 0;
-	padding: 0 1em 0 0;
-
-	display: flex;
-	justify-content: flex-end;
-}
-
 nav a {
 	font-size: 15px;
 	line-height: 150%;
@@ -144,7 +111,7 @@ nav a {
 }
 
 #home:hover {
-    color: #000000;
+    color: #CCCCCC;
     transition: color 0.2s ease-in-out;
 }
 
@@ -155,17 +122,18 @@ nav a {
 	background-image: url('images/mainpage-atlas.png');
 	background-size: cover;
 	background-position: center;
-    overflow: hidden;
+    overflow: auto;
 	height: 100vh;
 	width: 100%;
 	margin: 0;
 	padding: 0;
 }
 
+/*center block to separate from nav block*/
 .block-center {
     width: 100%;
     height: 80%;
-	margin: 3em auto auto auto;
+	margin: 2em auto auto auto;
     padding: auto;
     display: flex;
 
@@ -176,38 +144,37 @@ nav a {
     align-content: flex-start;
 }
 
-.block-center-2 {
+.title {
     width: 100%;
-    height: 100%;
-	margin: auto;
-    padding: 4em 0;
-    display: inline-flex;
-
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    align-content: flex-start;
 }
 
+.question {
+    width: 100%;
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+/*format for text input and buttons*/
 .block-translate {
     width: 100%;
     height: auto;
     margin: auto;
     padding: 2em;
-    display: inline-flex;
-    overflow: visible;
+    display: flex   ;
     
     flex-direction: row;
     flex-wrap: wrap;
     flex: 1 auto;
     list-style: none;
     justify-content: center;
-    align-items: flex-start;    
+    align-items: center;    
 }
 
+/*input field for text*/
 #language-input {
-    width: 100%;
+    width: 60%;
+    height: auto;
+    margin-bottom: 1em; 
     padding-bottom: .5em;
     background: transparent;
     outline: none;
@@ -218,12 +185,17 @@ nav a {
     outline: 0;
     background: transparent;
     border-bottom: 3px solid #FFFFFF;
+    display: flex;
+    text-align: center;
 }
 
+/*placeholder text formatting*/
 #language-input::-webkit-input-placeholder {
     color: #AAAAAA;
+    text-align: center;
 }
 
+/*button CSS*/
 .main-button {
     font-size: 1.2em;
     color: #FFFFFF;
@@ -241,6 +213,7 @@ nav a {
     background-color: rgba(255,255,255,0.3);    
 }
 
+/*footer CSS*/
 .block-bottom {
     width: 100%;
     padding: 2em;
@@ -251,20 +224,24 @@ nav a {
     flex: 1 1 50%;
 }
 
-/*translate page CSS below*/
 .explanation { 
     font: 16px/120% 'Lato', Arial, sans-serif;
     font-weight: 400;
 }
 
-.subheader {
+/*translate page CSS below*/
+.block-center-2 {
     width: 100%;
-    font: 24px/120% 'Lato', Arial, sans-serif;
-    font-weight: 700;
-    color: #3A3A3A;
-    display: block;
-    padding-bottom: .5em;
-    margin-top: 4em;
+    height: 100%;
+	margin: auto;
+    padding: 4em 0;
+    display: inline-flex;
+
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: flex-start;
 }
 
 /*divides translate page into two sections*/
@@ -305,7 +282,6 @@ nav a {
 .block-center-right-top {
     width: 100%;
     height: 30%;
-/*	margin: auto;*/
     margin: 2em 0;
 	display: inline-flex;
 	overflow: hidden;
@@ -350,10 +326,16 @@ nav a {
     overflow: auto;
 }
 
+/*wikipedia data formatting*/
 .wikipedia {
     width: 80%;
     height: 50%;
     overflow: auto;
+}
+
+.wiki {
+    width: 100%;
+    text-align: left;
 }
 
 .wikipedia p {
@@ -362,10 +344,77 @@ nav a {
 
 /*form formatting*/
 form {
+    width: 100%;
     margin: 1em 0;
+    display: flex;
+    justify-content: center;
 }
 
-@media screen and (max-width: 1024px) {
+/*tablet formatting*/
+@media screen and (min-device-width: 480px) and (max-width: 1024px) {
+    h1 {
+        width: 100%;
+        font: 1.6em/140% 'Lora', Arial, serif;
+        letter-spacing: 1px;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 1em 0;
+        padding: 1em 0 2em 0;
+        text-align: center;
+        word-wrap: break-word;
+    }
+    .navcontainer {
+        width: 100%;
+        z-index: 999;
+        height: 50px;
+        background-color: rgba(0,0,0,0.4);
+        margin: none;
+        position: fixed;
+
+        display: flex;
+        flex-direction: row;    
+        flex-wrap: wrap;
+        list-style: none;
+        justify-content: center;
+    }
+    
+    .block-center {
+        width: 100%;
+        height: 70%;
+        margin-top: 5em;
+        padding: auto;
+        display: flex;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .question {
+        width: 100%;
+        padding: 2em 0 1em 0;
+        text-align: center;
+    }
+
+    .main-button {
+        font-size: 1.2em;
+        color: #FFFFFF;
+        border: 2px solid #FFFFFF;
+        background-color: transparent;
+        border-radius: 20px;
+        padding: .2em 1em;
+        margin: 0.5em;
+
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+    }
+    
+    .explanation { 
+        font: 14px/120% 'Lato', Arial, sans-serif;
+        font-weight: 400;
+    }
+    
     .block-center-left {
         width: 100%;
         height: 40%;
@@ -389,6 +438,212 @@ form {
         margin-top: 2%;
         padding: 2em;
         display: inline-flex;
+        overflow: auto;
+        position: relative;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 1 auto;
+        list-style: none;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .block-center-right-top {
+        width: 100%;
+        height: 30%;
+        margin: 1em 0;
+        display: inline-flex;
+        overflow: hidden;
+        position: relative;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 1 auto;
+        list-style: none;
+        justify-content: center;
+    }
+    
+    .block-center-right-top {
+        width: 100%;
+        height: 30%;
+        margin: 2em 0;
+        display: inline-flex;
+        overflow: hidden;
+        position: relative;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 1 auto;
+        list-style: none;
+        justify-content: center;
+    }     
+    
+    .block-translate {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        padding: 0.5em;
+        display: flex   ;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 1 auto;
+        list-style: none;
+        justify-content: center;
+        align-items: center;    
+    }    
+    
+    #language-input {
+        width: 80%;
+        height: auto;
+        margin: 2em; 
+        padding-bottom: .5em;
+        background: transparent;
+        outline: none;
+        box-sizing: border-box;
+        font-size: 1.2em;
+        color: #FFFFFF;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 3px solid #FFFFFF;
+        display: flex;
+        text-align: center;
+    } 
+    
+    /*translated text formatting*/
+    .translated {
+        width: 80%;
+        border-bottom: 3px solid #FFFFFF;
+        margin-bottom: 1em;
+        display: block;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .wikipedia {
+        width: 100%;
+        height: 100%;
+        padding: 2em;
+        overflow: auto;
+    }
+    
+    form {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/*smart phone formatting; plays with margins and font sizes*/
+@media screen and (min-device-width: 320px) and (max-width: 480px) {
+    h1 {
+        width: 100%;
+        font: 1.6em/140% 'Lora', Arial, serif;
+        letter-spacing: 1px;
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: auto;
+        padding: 3em 1em 2em 1em;
+        text-align: center;
+        word-wrap: break-word;
+    }
+    .navcontainer {
+        width: 100%;
+        z-index: 999;
+        height: 50px;
+        background-color: rgba(0,0,0,0.4);
+        margin: none;
+        position: fixed;
+
+        display: flex;
+        flex-direction: row;    
+        flex-wrap: wrap;
+        list-style: none;
+        justify-content: center;
+    }
+    
+    .block-center {
+        width: 100%;
+        height: 60%;
+        margin-top: 5em;
+        padding: auto;
+        display: flex;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .question {
+        width: 100%;
+        padding: 2em 0 1em 0;
+        text-align: center;
+    }
+    
+    .main-button {
+        font-size: 1em;
+        color: #FFFFFF;
+        border: 2px solid #FFFFFF;
+        background-color: transparent;
+        border-radius: 20px;
+        padding: .2em 1em;
+        margin: 1em;
+
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+    }
+    
+    /*input field for text*/
+    #language-input {
+        width: 60%;
+        height: auto;
+        margin-bottom: 1em; 
+        padding-bottom: .5em;
+        background: transparent;
+        outline: none;
+        box-sizing: border-box;
+        font-size: 12px/110% 'Lato', Arial, sans-serif;
+        color: #FFFFFF;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 3px solid #FFFFFF;
+        display: flex;
+        text-align: center;
+    }    
+    
+    .explanation { 
+        font: 12px/120% 'Lato', Arial, sans-serif;
+        font-weight: 400;
+    }
+    
+    .block-center-left {
+        width: 100%;
+        height: 30%;
+        margin: auto;
+        padding: 1em;
+        display: inline-flex;
+        overflow: hidden;
+        position: relative;
+        border-right: 1px solid #FFFFFF;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 1 auto;
+        list-style: none;
+        justify-content: space-between;
+    }
+
+    .block-center-right {
+        width: 100%;
+        height: 70%;
+        margin: 0;
+        padding: 1em;
+        display: inline-flex;
         overflow: hidden;
         position: relative;
 
@@ -398,16 +653,88 @@ form {
         list-style: none;
         justify-content: center;
         align-items: flex-start;
+    } 
+    
+    .block-center-right-top {
+        width: 100%;
+        height: 40%;
+        margin: 2em 0;
+        display: inline-flex;
+        overflow: hidden;
+        position: relative;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 1 auto;
+        list-style: none;
+        justify-content: center;
     }    
+    
+    .block-translate {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        padding: 0.5em;
+        display: flex   ;
+
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 1 auto;
+        list-style: none;
+        justify-content: center;
+        align-items: center;    
+    }    
+    
+    #language-input {
+        width: 80%;
+        height: auto;
+        margin: 1em 0 0.5em 0; 
+        padding-bottom: .5em;
+        background: transparent;
+        outline: none;
+        box-sizing: border-box;
+        font-size: 1.2em;
+        color: #FFFFFF;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 3px solid #FFFFFF;
+        display: flex;
+        text-align: center;
+    }   
+    
+    /*translated text formatting*/
+    .translated {
+        width: 90%;
+        border-bottom: 3px solid #FFFFFF;
+        margin-bottom: 1em;
+        display: block;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .translated-text {
+        width: 100%;
+        font-size: 1em;
+        color: #FFFFFF;
+        text-align: center;
+        overflow: auto;
+    }    
+
+    .translated-language {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .translated-language p {
+        font-weight: 700;
+        font-size: 1.2em;
+    }
     
     .wikipedia {
         width: 100%;
-        height: 100%;
+        height: 80%;
         padding: 2em;
         overflow: auto;
     }
-}
-
-@media (max-width: 1680px) {
-    
 }
